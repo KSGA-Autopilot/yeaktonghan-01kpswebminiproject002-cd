@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: yeaktonghan-01kpswebminiproject002
-          image: kshrdautopilot/yeaktonghan-01kpswebminiproject002
+          image: kshrdautopilot/yeaktonghan-01kpswebminiproject002:2023-12-03-14-25-32
           ports:
             - containerPort: 3000
