@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: yeaktonghan-01kpswebminiproject002-ingress
+  namespace: yeaktonghan
+spec:
+  tls:
+    - hosts:
+        - autopilot19.hanyeaktong.site
+      secretName: autopilot19-hanyeaktong-site-cert
+  rules:
+    - host: autopilot19.hanyeaktong.site
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: yeaktonghan-01kpswebminiproject002-svc
+                port:
+                  number: 3000
