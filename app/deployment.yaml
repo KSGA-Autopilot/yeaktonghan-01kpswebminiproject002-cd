@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yeaktonghan-01kpswebminiproject002-deployment
+  labels:
+    app: yeaktonghan-01kpswebminiproject002
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: yeaktonghan-01kpswebminiproject002
+  template:
+    metadata:
+      labels:
+        app: yeaktonghan-01kpswebminiproject002
+    spec:
+      containers:
+        - name: yeaktonghan-01kpswebminiproject002
+          image: kshrdautopilot/yeaktonghan-01kpswebminiproject002
+          ports:
+            - containerPort: 3000
