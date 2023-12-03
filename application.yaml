@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: yeaktonghan-01kpswebminiproject002
+spec:
+  destination:
+    name: ''
+    namespace: yeaktonghan
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: app
+    repoURL: 'https://github.com/KSGA-Autopilot/yeaktonghan-01kpswebminiproject002-cd'
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+project: default
+source:
+  repoURL: 'https://github.com/KSGA-Autopilot/yeaktonghan-01kpswebminiproject002-cd'
+  path: app
+  targetRevision: HEAD
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: yeaktonghan
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
